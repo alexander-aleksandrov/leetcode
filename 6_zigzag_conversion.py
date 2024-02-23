@@ -7,8 +7,9 @@ class Solution:
         while True:
             for i in range(row, len(s), numRows*2-2):
                 res += s[i]
-                if row != 0 and row != numRows-1 and i + (numRows-1-row)*2 < len(s):
-                    res += s[i + (numRows-1-row)*2]
+                current_index = i + (numRows-1-row)*2
+                if row != 0 and row != numRows-1 and current_index < len(s):
+                    res += s[current_index]
             row += 1
             if row == numRows:
                 break
